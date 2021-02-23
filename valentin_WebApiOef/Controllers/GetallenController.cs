@@ -37,7 +37,7 @@ namespace valentin_WebApiOef.Controllers
             {
                 using (StreamWriter sw = System.IO.File.AppendText($"{path.GetFilePath()}getal.txt"))
                 {
-                    sw.WriteLine(newNumber);
+                    sw.WriteLine(Convert.ToInt32(newNumber));
                     return base.Ok();
                 }
             }
@@ -58,7 +58,7 @@ namespace valentin_WebApiOef.Controllers
                 {
                     foreach (string number in listNumber)
                     {
-                        outputFile.WriteLine(number);
+                        outputFile.WriteLine(Convert.ToInt32(number));
                     }
                 }
                 return base.Ok();
@@ -80,7 +80,7 @@ namespace valentin_WebApiOef.Controllers
                 {
                     foreach (string number in listNumber)
                     {
-                        outputFile.WriteLine(number);
+                        outputFile.WriteLine(Convert.ToInt32(number));
                     }
                 }
                 return base.Ok();
