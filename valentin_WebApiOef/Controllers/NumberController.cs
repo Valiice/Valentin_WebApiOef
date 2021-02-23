@@ -23,7 +23,7 @@ namespace valentin_WebApiOef.Controllers
             try
             {
                 string file = System.IO.File.ReadAllText($"{path.GetFilePath()}getal.txt");
-                return Ok(file);
+                return Ok(Convert.ToInt32(file));
             }
             catch (FileNotFoundException)
             {
@@ -31,7 +31,7 @@ namespace valentin_WebApiOef.Controllers
             }
         }
         [HttpPost("create")]
-        public ActionResult CreateNumber(string newNumber)
+        public ActionResult CreateNumber(int newNumber)
         {
             using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(path.GetFilePath(), "getal.txt")))
             {
