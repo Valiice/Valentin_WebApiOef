@@ -23,7 +23,8 @@ namespace valentin_WebApiOef.Controllers
             try
             {
                 string[] file = System.IO.File.ReadAllLines($"{path.GetFilePath()}getal.txt");
-                return Ok(file);
+                var listNumber = file.Select(x => Convert.ToInt32(x));
+                return Ok(listNumber);
             }
             catch (FileNotFoundException)
             {
